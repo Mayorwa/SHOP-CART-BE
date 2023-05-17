@@ -12,13 +12,8 @@ class UserResource extends JsonResource
     {
 
         return [
-            'name' => $this->first_name. ' '. $this->last_name,
-            'email' => $this->type === 'customer' ? '' : $this->email,
-            'phone_number' => $this->phone,
-            'avatar' => $this->avatar,
-            'type' => $this->type,
-            'slug' => $this->slug,
-            'token' => $this->token,
+            'name' => $this->name,
+            'email' => $this->email,
             'created_at' => Carbon::parse($this->created_at)->calendar(),
         ];
     }
